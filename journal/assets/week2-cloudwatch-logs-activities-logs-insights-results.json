@@ -1,0 +1,122 @@
+[
+    {
+        "@timestamp": "2023-03-02 20:10:45.790",
+        "@message": "[2023-Mar-02 20:10] 192.168.32.140 GET http /api/activities/@tst? 200 OK",
+        "@logStream": "backend-flask//opt/venv/lib/python3.10/site-packages/flask/__main__.py/app/27",
+        "@log": "XXXXX:cruddur"
+    },
+    {
+        "@timestamp": "2023-03-02 20:10:44.923",
+        "@message": "[2023-Mar-02 20:10] 192.168.32.140 GET http /api/activities/@tst? 200 OK",
+        "@logStream": "backend-flask//opt/venv/lib/python3.10/site-packages/flask/__main__.py/app/27",
+        "@log": "XXXXX:cruddur"
+    },
+    {
+        "@timestamp": "2023-03-02 20:10:41.466",
+        "@message": "Hello Cloudwatch! from  /api/activities/home",
+        "@logStream": "backend-flask//opt/venv/lib/python3.10/site-packages/flask/__main__.py/app/27",
+        "@log": "XXXXX:cruddur"
+    },
+    {
+        "@timestamp": "2023-03-02 20:10:41.466",
+        "@message": "[2023-Mar-02 20:10] 192.168.32.140 GET http /api/activities/home? 200 OK",
+        "@logStream": "backend-flask//opt/venv/lib/python3.10/site-packages/flask/__main__.py/app/27",
+        "@log": "XXXXX:cruddur"
+    },
+    {
+        "@timestamp": "2023-03-02 20:10:41.465",
+        "@message": "home activities",
+        "@logStream": "backend-flask//opt/venv/lib/python3.10/site-packages/flask/__main__.py/app/27",
+        "@log": "XXXXX:cruddur"
+    },
+    {
+        "@timestamp": "2023-03-02 20:10:40.578",
+        "@message": "[2023-Mar-02 20:10] 192.168.32.140 GET http /api/activities/home? 200 OK",
+        "@logStream": "backend-flask//opt/venv/lib/python3.10/site-packages/flask/__main__.py/app/27",
+        "@log": "XXXXX:cruddur"
+    },
+    {
+        "@timestamp": "2023-03-02 20:10:40.577",
+        "@message": "home activities",
+        "@logStream": "backend-flask//opt/venv/lib/python3.10/site-packages/flask/__main__.py/app/27",
+        "@log": "XXXXX:cruddur"
+    },
+    {
+        "@timestamp": "2023-03-02 20:10:40.577",
+        "@message": "Hello Cloudwatch! from  /api/activities/home",
+        "@logStream": "backend-flask//opt/venv/lib/python3.10/site-packages/flask/__main__.py/app/27",
+        "@log": "XXXXX:cruddur"
+    },
+    {
+        "@timestamp": "2023-03-02 20:10:11.396",
+        "@message": "[2023-Mar-02 20:10] 192.168.32.140 GET http /api/activities/home? 200 OK",
+        "@logStream": "backend-flask//opt/venv/lib/python3.10/site-packages/flask/__main__.py/app/27",
+        "@log": "XXXXX:cruddur"
+    },
+    {
+        "@timestamp": "2023-03-02 20:10:11.395",
+        "@message": "home activities",
+        "@logStream": "backend-flask//opt/venv/lib/python3.10/site-packages/flask/__main__.py/app/27",
+        "@log": "XXXXX:cruddur"
+    },
+    {
+        "@timestamp": "2023-03-02 20:10:11.395",
+        "@message": "Hello Cloudwatch! from  /api/activities/home",
+        "@logStream": "backend-flask//opt/venv/lib/python3.10/site-packages/flask/__main__.py/app/27",
+        "@log": "XXXXX:cruddur"
+    },
+    {
+        "@timestamp": "2023-03-02 20:09:54.334",
+        "@message": "some message",
+        "@logStream": "backend-flask//opt/venv/lib/python3.10/site-packages/flask/__main__.py/app/27",
+        "@log": "XXXXX:cruddur"
+    },
+    {
+        "@timestamp": "2023-03-02 20:09:52.664",
+        "@message": "some message",
+        "@logStream": "backend-flask//opt/venv/lib/python3.10/site-packages/flask/__main__.py/app/1",
+        "@log": "XXXXX:cruddur"
+    },
+    {
+        "@timestamp": "2023-03-02 20:02:25.476",
+        "@message": "some message",
+        "@logStream": "backend-flask//opt/venv/lib/python3.10/site-packages/flask/__main__.py/app/27",
+        "@log": "XXXXX:cruddur"
+    },
+    {
+        "@timestamp": "2023-03-02 20:02:22.364",
+        "@message": "some message",
+        "@logStream": "backend-flask//opt/venv/lib/python3.10/site-packages/flask/__main__.py/app/1",
+        "@log": "XXXXX:cruddur"
+    },
+    {
+        "@timestamp": "2023-03-02 19:49:57.167",
+        "@message": "Hello Cloudwatch! from  /api/activities/home",
+        "@logStream": "backend-flask//opt/venv/lib/python3.10/site-packages/flask/__main__.py/app/25",
+        "@log": "XXXXX:cruddur"
+    },
+    {
+        "@timestamp": "2023-03-02 19:49:57.167",
+        "@message": "[2023-Mar-02 19:49] 192.168.32.140 GET http /api/activities/home? 200 OK",
+        "@logStream": "backend-flask//opt/venv/lib/python3.10/site-packages/flask/__main__.py/app/25",
+        "@log": "XXXXX:cruddur"
+    },
+    {
+        "@timestamp": "2023-03-02 19:49:20.019",
+        "@message": "[2023-Mar-02 19:49] 192.168.32.140 GET http /api/activities/@tst? 200 OK",
+        "@logStream": "backend-flask//opt/venv/lib/python3.10/site-packages/flask/__main__.py/app/25",
+        "@log": "XXXXX:cruddur"
+    },
+    {
+        "@timestamp": "2023-03-02 19:42:07.155",
+        "@message": "[2023-Mar-02 19:42] 192.168.32.140 GET http /api/activities/@tst? 200 OK",
+        "@logStream": "backend-flask//opt/venv/lib/python3.10/site-packages/flask/__main__.py/app/25",
+        "@log": "XXXXX:cruddur"
+    },
+    {
+        "@timestamp": "2023-03-02 19:40:33.717",
+        "@message": "[2023-Mar-02 19:40] 192.168.32.140 GET http /favicon.ico? 404 NOT FOUND",
+        "@logStream": "backend-flask//opt/venv/lib/python3.10/site-packages/flask/__main__.py/app/25",
+        "@log": "XXXXX:cruddur"
+    }
+]

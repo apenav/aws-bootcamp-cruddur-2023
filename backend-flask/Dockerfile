@@ -23,7 +23,7 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 # . means everything in the current directory
 # first period . - /backend-flask (outside container)
 # second period . /backend-flask (inside container)
-COPY . .                                                                                                                
+COPY . .
 
 FROM base as runtime
 # Set Enviroment Variables (Env Vars)
