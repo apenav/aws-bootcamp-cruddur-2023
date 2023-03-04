@@ -170,8 +170,18 @@ def data_create_message():
 @app.route("/api/activities/home", methods=['GET'])
 @xray_recorder.capture('activities_home')
 def data_home():
-  data = HomeActivities.run(logger=LOGGER)
-  LOGGER.info('Hello Cloudwatch! from  /api/activities/home')
+  try:
+    access_token = extract_access_token(request.headers)
+    claims = cognito_jwt_token.verify(access_token)
+    #auth req
+    app.logger.debug("auth")
+    app.logger.debug(claims)
+    data = HomeActivities.run(logger=LOGGER)
+    LOGGER.info('Hello Cloudwatch! from  /api/activities/home')
+  except TokenVerifyError as e:
+    app.logger.debug(e)
+    app.logger.debug("unauth")
+    data = HomeActivities.run(logger=LOGGER)
   return data, 200
 
 @app.route("/api/activities/notifications", methods=['GET'])
