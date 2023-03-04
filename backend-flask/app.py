@@ -2,6 +2,7 @@ from flask import Flask
 from flask import request
 from flask_cors import CORS, cross_origin
 import os
+import sys
 
 from services.home_activities import *
 from services.notifications_activities import *
@@ -14,7 +15,9 @@ from services.messages import *
 from services.create_message import *
 from services.show_activity import *
 
-# HoneyComb ------
+from lib.cognito_jwt_token import CognitoJwtToken, extract_access_token, TokenVerifyError
+
+# HoneyComb ---------
 from opentelemetry import trace
 from opentelemetry.instrumentation.flask import FlaskInstrumentor
 from opentelemetry.instrumentation.requests import RequestsInstrumentor
@@ -60,6 +63,12 @@ tracer = trace.get_tracer(__name__)
 
 app = Flask(__name__)
 
+cognito_jwt_token = CognitoJwtToken(
+  user_pool_id=os.getenv("AWS_COGNITO_USER_POOL_ID"), 
+  user_pool_client_id=os.getenv("AWS_COGNITO_USER_POOL_CLIENT_ID"),
+  region=os.getenv("AWS_DEFAULT_REGION")
+)
+
 # HoneyComb ---------
 # Initialize automatic instrumentation with Flask
 FlaskInstrumentor().instrument_app(app)
@@ -77,8 +86,8 @@ origins = [frontend, backend]
 cors = CORS(
   app, 
   resources={r"/api/*": {"origins": origins}},
-  expose_headers="location,link",
-  allow_headers="content-type,if-modified-since",
+  headers=['Content-Type', 'Authorization'], 
+  expose_headers='Authorization',
   methods="OPTIONS,GET,HEAD,POST"
 )
 
