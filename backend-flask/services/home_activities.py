@@ -6,7 +6,7 @@ from aws_xray_sdk.core import xray_recorder
 tracer = trace.get_tracer("home.activities")
 
 class HomeActivities:
-  def run(cognito_user_id=None,logger):
+  def run(logger, cognito_user_id=None):
 
     logger.info("home activities")
     with tracer.start_as_current_span("home-activities-mock-data"):
