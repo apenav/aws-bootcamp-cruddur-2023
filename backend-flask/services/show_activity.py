@@ -1,4 +1,6 @@
 from datetime import datetime, timedelta, timezone
+from aws_xray_sdk.core import xray_recorder
+
 class ShowActivities:
   def run(activity_uuid):
     logger.info("show activities")

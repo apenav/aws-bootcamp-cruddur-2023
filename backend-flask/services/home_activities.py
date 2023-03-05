@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta, timezone
 from opentelemetry import trace
+from aws_xray_sdk.core import xray_recorder
 
 tracer = trace.get_tracer("home.activities")
 
