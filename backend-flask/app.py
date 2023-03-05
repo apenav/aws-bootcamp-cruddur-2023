@@ -174,14 +174,15 @@ def data_home():
     access_token = extract_access_token(request.headers)
     claims = cognito_jwt_token.verify(access_token)
     #auth req
-    app.logger.debug("auth")
+    app.logger.debug("authenticated")
     app.logger.debug(claims)
-    data = HomeActivities.run(logger=LOGGER)
+    app.logger.debug(claims['username'])
+    data = HomeActivities.run(cognito_user_id=claims['username'], logger=LOGGER)
     LOGGER.info('Hello Cloudwatch! from  /api/activities/home')
   except TokenVerifyError as e:
     app.logger.debug(e)
-    app.logger.debug("unauth")
-    data = HomeActivities.run(logger=LOGGER)
+    app.logger.debug("unauthenticated")
+    data = HomeActivities.run(,logger=LOGGER)
   return data, 200
 
 @app.route("/api/activities/notifications", methods=['GET'])
