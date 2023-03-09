@@ -128,7 +128,7 @@ def init_rollbar():
 
 @app.route('/rollbar/test')
 def rollbar_test():
-    a=0/0
+    #a=0/0
     rollbar.report_message('Hello World!', 'warning')
     return "Hello World!"
 
@@ -170,6 +170,8 @@ def data_create_message():
 @app.route("/api/activities/home", methods=['GET'])
 @xray_recorder.capture('activities_home')
 def data_home():
+  #app.logger.debug('AUTH HEADER ---');
+  #app.logger.debug(request.headers.get('Authorization'))
   try:
     access_token = extract_access_token(request.headers)
     claims = cognito_jwt_token.verify(access_token)
