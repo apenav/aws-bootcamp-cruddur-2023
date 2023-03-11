@@ -9,10 +9,7 @@
 <!-- /TOC -->
 
 # Pending tasks from week-2
-
-[week2 pending import xray_recorder](https://github.com/apenav/aws-bootcamp-cruddur-2023/commit/581de294911206efc3823d3154443f76760dfd3a)
-
-Lacking the line
+As commented in previous week2 "Homework Submission" summary, trying to make Honeycomb queries/attributes custom span work I forgot to add the line
 
 ```
 from aws_xray_sdk.core import xray_recorder
@@ -21,20 +18,33 @@ from aws_xray_sdk.core import xray_recorder
 in both
 
 - <https://github.com/apenav/aws-bootcamp-cruddur-2023/blob/week2-quickfix-import-xray_recorder/backend-flask/services/home_activities.py>
-- <https://github.com/apenav/aws-bootcamp-cruddur-2023/blob/week2-quickfix-import-xray_recorder/backend-flask/servicesshow_activity.py>
+- <https://github.com/apenav/aws-bootcamp-cruddur-2023/blob/week2-quickfix-import-xray_recorder/backend-flask/services/show_activity.py>
 files
+
+I added a commit as an independent branch but also integrated the fix in current week-3 (to be merged to main) 
+[week2 pending import xray_recorder in home_activities.py and show_activity.py](https://github.com/apenav/aws-bootcamp-cruddur-2023/commit/581de294911206efc3823d3154443f76760dfd3a)
+
+
 
 # Required Homework/Tasks
 
 Files commited under their respective folders.
 
-applied to docker-compose.yml
+## Properly working gitpod Enviroment
+
+![cruddr Loggedin](assets/week3-cruddrLoggedin.PNG)
+![cruddr Loggedin POST message](assets/week3-cruddrLoggedinPOSTmessage.PNG)
+
+### Affected by CORS error when switched to GitHub Codespaces
+![cruddr Loggedin POST ERROR message](assets/week3-cruddrLoggedinPOST-ERRORmessage.PNG)
+
+### Not working Workaround to disable X-Ray traces
+Just applied to docker-compose.yml
 
 ```
 AWS_XRAY_SDK_ENABLED: "False"
 ```
-
-it looks like afffected by an issue similar to <https://github.com/aws/aws-xray-sdk-python/issues/330>
+but undo because  it looks like affected by an issue similar to <https://github.com/aws/aws-xray-sdk-python/issues/330>
 
 [week2 variables shellscript file (to be set with real values)](https://raw.githubusercontent.com/apenav/aws-bootcamp-cruddur-2023/week-2/journal/assets/week2variables.sh)
 
@@ -43,9 +53,6 @@ it looks like afffected by an issue similar to <https://github.com/aws/aws-xray-
 ![cruddr cognito MFA ](assets/week3-cognito-MFA.PNG)
 ![cruddr cognito MFA 2](assets/week3-cognito-MFA2.PNG)
 ![cruddr cognito MFA 3](assets/week3-cognito-MFA3.PNG)
-![cruddr Loggedin](assets/week3-cruddrLoggedin.PNG)
-![cruddr Loggedin POST ERROR message](assets/week3-cruddrLoggedinPOST-ERRORmessage.PNG)
-![cruddr Loggedin POST message](assets/week3-cruddrLoggedinPOSTmessage.PNG)
 
 ```
 backend-flask                            | [2023-Mar-11 12:12] 192.168.40.10 GET http /api/activities/@andrewbrown? 200 OK
@@ -120,10 +127,10 @@ backend-flask                            | [2023-Mar-11 12:19] 192.168.40.10 OPT
 backend-flask                            | 192.168.40.10 - - [11/Mar/2023 12:19:30] "OPTIONS /api/activities/home HTTP/1.1" 200 -
 backend-flask                            | [2023-03-11 12:19:30,633] DEBUG in app: authenticated
 backend-flask                            | authenticated
-backend-flask                            | [2023-03-11 12:19:30,633] DEBUG in app: {'sub': '9b658298-ed04-4404-b44e-eb6846b936e0', 'iss': 'https://cognito-idp.us-east-1.amazonaws.com/us-east-1_NFzqT3jMU', 'client_id': '4dohua9ds2lm9sh83ardiq2bng', 'origin_jti': 'cfd4fbe1-05c3-4531-8ae1-281fb3028111', 'event_id': '438c3d34-483f-4e52-9503-982c902e9d6f', 'token_use': 'access', 'scope': 'aws.cognito.signin.user.admin', 'auth_time': 1678537169, 'exp': 1678540769, 'iat': 1678537169, 'jti': 'b4f0e52b-ad61-4221-ae58-f0347ed8b612', 'username': 'chichamorada1234@gmail.com'}
-backend-flask                            | {'sub': '9b658298-ed04-4404-b44e-eb6846b936e0', 'iss': 'https://cognito-idp.us-east-1.amazonaws.com/us-east-1_NFzqT3jMU', 'client_id': '4dohua9ds2lm9sh83ardiq2bng', 'origin_jti': 'cfd4fbe1-05c3-4531-8ae1-281fb3028111', 'event_id': '438c3d34-483f-4e52-9503-982c902e9d6f', 'token_use': 'access', 'scope': 'aws.cognito.signin.user.admin', 'auth_time': 1678537169, 'exp': 1678540769, 'iat': 1678537169, 'jti': 'b4f0e52b-ad61-4221-ae58-f0347ed8b612', 'username': 'chichamorada1234@gmail.com'}
-backend-flask                            | [2023-03-11 12:19:30,633] DEBUG in app: chichamorada1234@gmail.com
-backend-flask                            | chichamorada1234@gmail.com
+backend-flask                            | [2023-03-11 12:19:30,633] DEBUG in app: {'sub': '9b658298-ed04-4404-b44e-eb6846b936e0', 'iss': 'https://cognito-idp.us-east-1.amazonaws.com/us-east-1_NxxxxU', 'client_id': 'xxx', 'origin_jti': 'cfd4fbe1-05c3-4531-8ae1-281fb3028111', 'event_id': '438c3d34-483f-4e52-9503-982c902e9d6f', 'token_use': 'access', 'scope': 'aws.cognito.signin.user.admin', 'auth_time': 1678537169, 'exp': 1678540769, 'iat': 1678537169, 'jti': 'b4f0e52b-ad61-4221-ae58-f0347ed8b612', 'username': 'xxx@xxx.com'}
+backend-flask                            | {'sub': '9b658298-ed04-4404-b44e-eb6846b936e0', 'iss': 'https://cognito-idp.us-east-1.amazonaws.com/us-east-1_xxxxU', 'client_id': '4dohua9ds2lm9sh83ardiq2bng', 'origin_jti': 'cfd4fbe1-05c3-4531-8ae1-281fb3028111', 'event_id': '438c3d34-483f-4e52-9503-982c902e9d6f', 'token_use': 'access', 'scope': 'aws.cognito.signin.user.admin', 'auth_time': 1678537169, 'exp': 1678540769, 'iat': 1678537169, 'jti': 'b4f0e52b-ad61-4221-ae58-f0347ed8b612', 'username': 'xxx@xxx.com'}
+backend-flask                            | [2023-03-11 12:19:30,633] DEBUG in app: XXX@XXX.com
+backend-flask                            | XXX@XXX.com
 backend-flask                            | [2023-03-11 12:19:30,633] INFO in home_activities: home activities
 backend-flask                            | home activities
 backend-flask                            | [2023-03-11 12:19:30,634] INFO in app: Hello Cloudwatch! from  /api/activities/home
