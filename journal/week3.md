@@ -1,15 +1,19 @@
 <!-- TOC ignore:true -->
+
 # Week 3 — Decentralized Authentication
 <!-- TOC -->
 
 - [Week 3 — Decentralized Authentication](#week-3--decentralized-authentication)
 - [Pending tasks from week-2](#pending-tasks-from-week-2)
 - [Required Homework/Tasks](#required-homeworktasks)
+    - [Properly working gitpod Enviroment](#properly-working-gitpod-enviroment)
+        - [Affected by CORS error when switched to GitHub Codespaces](#affected-by-cors-error-when-switched-to-github-codespaces)
+        - [Not working Workaround to disable X-Ray traces](#not-working-workaround-to-disable-x-ray-traces)
 
 <!-- /TOC -->
 
 # Pending tasks from week-2
-As commented in previous week2 "Homework Submission" summary, trying to make Honeycomb queries/attributes custom span work I forgot to add the line
+As commented in previous week2 "Homework Submission" summary, trying to make a working Honeycomb queries/attributes custom span there was needed this line
 
 ```
 from aws_xray_sdk.core import xray_recorder
@@ -21,7 +25,7 @@ in both
 - <https://github.com/apenav/aws-bootcamp-cruddur-2023/blob/week2-quickfix-import-xray_recorder/backend-flask/services/show_activity.py>
 files
 
-I added a commit as an independent branch but also integrated the fix in current week-3 (to be merged to main) 
+I added a commit as an independent branch (not to be merged) but also integrated the fix in current week-3 branch.
 [week2 pending import xray_recorder in home_activities.py and show_activity.py](https://github.com/apenav/aws-bootcamp-cruddur-2023/commit/581de294911206efc3823d3154443f76760dfd3a)
 
 
@@ -31,6 +35,8 @@ I added a commit as an independent branch but also integrated the fix in current
 Files commited under their respective folders.
 
 ## Properly working gitpod Enviroment
+
+Added user aaa with current email to cognito
 
 ![cruddr Loggedin](assets/week3-cruddrLoggedin.PNG)
 ![cruddr Loggedin POST message](assets/week3-cruddrLoggedinPOSTmessage.PNG)
