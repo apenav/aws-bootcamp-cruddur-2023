@@ -11,6 +11,12 @@
         - [Not working Workaround to disable X-Ray traces](#not-working-workaround-to-disable-x-ray-traces)
         - [Configuration of AWS Cognito](#configuration-of-aws-cognito)
         - [Unsuccessful attempt to configure MFA](#unsuccessful-attempt-to-configure-mfa)
+    - [Properly working gitpod Enviroment](#properly-working-gitpod-enviroment)
+        - [CORS error when switched to GitHub Codespaces, fixed openning the port](#cors-error-when-switched-to-github-codespaces-fixed-openning-the-port)
+        - [Applied Workaround to disable X-Ray traces, but not working](#applied-workaround-to-disable-x-ray-traces-but-not-working)
+        - [Configured MFA in cognito](#configured-mfa-in-cognito)
+            - [Pinpoint service](#pinpoint-service)
+            - [SMS configured MFA](#sms-configured-mfa)
 
 <!-- /TOC -->
 
@@ -33,45 +39,8 @@ I added a commit as an independent branch (not to be merged) but also integrated
 
 # Required Homework/Tasks
 
-Files commited under their respective folders.
-
-## Properly working gitpod Enviroment
-
-Added user aaa with current email to cognito
-
-![cruddr Loggedin](assets/week3-cruddrLoggedin.PNG)
-![cruddr Loggedin POST message](assets/week3-cruddrLoggedinPOSTmessage.PNG)
-
-### Affected by CORS error when switched to GitHub Codespaces
-
-![cruddr Loggedin POST ERROR message](assets/week3-cruddrLoggedinPOST-ERRORmessage.PNG)
-
-### Not working Workaround to disable X-Ray traces
-
-Just applied to docker-compose.yml
-
-```
-AWS_XRAY_SDK_ENABLED: "False"
-```
-
-but undo because  it looks like affected by an issue similar to <https://github.com/aws/aws-xray-sdk-python/issues/330>
-
-### Configuration of AWS Cognito
-
-![cruddr cognito configuration](assets/week3-cognito.PNG)
-
-![cruddr cognito confirmation code](assets/week3-cognito-confirmationcode.PNG)
-![cruddr cognito  confirmation email](assets/week3-cognito-confirmemail.PNG)
-![cruddr cognito duplicated email](assets/week3-cognito-duplicatedmail.PNG)
-
-### Unsuccessful attempt to configure MFA
-
-![cruddr cognito MFA pinpoint](assets/week3-cognito-MFA-pinpoint.PNG)
-![cruddr cognito MFA pinpoint was Verified](assets/week3-cognito-MFA-pinpointVerified.PNG)
-![cruddr cognito MFA ](assets/week3-cognito-MFA.PNG)
-![cruddr cognito MFA 2](assets/week3-cognito-MFA2.PNG)
-![cruddr cognito MFA 3](assets/week3-cognito-MFA3.PNG)
-
+Files commited under their respective folders, having a working app as a result.
+Docker compose up log:
 ```
 backend-flask                            | [2023-Mar-11 12:12] 192.168.40.10 GET http /api/activities/@andrewbrown? 200 OK
 backend-flask                            | 192.168.40.10 - - [11/Mar/2023 12:12:54] "GET /api/activities/@andrewbrown HTTP/1.1" 200 -
@@ -159,3 +128,76 @@ backend-flask                            | [2023-Mar-11 12:19] 192.168.40.10 GET
 backend-flask                            | 192.168.40.10 - - [11/Mar/2023 12:19:30] "GET /api/activities/home HTTP/1.1" 200 -
 aws-bootcamp-cruddur-2023-xray-daemon-1  | 2023-03-11T12:19:31Z [Info] Successfully sent batch of 2 segments (0.100 seconds)
 ```
+
+## Properly working gitpod Enviroment
+
+Added user aaa with current email to cognito
+
+![cruddr Loggedin](assets/week3-cruddrLoggedin.PNG)
+![cruddr Loggedin POST message](assets/week3-cruddrLoggedinPOSTmessage.PNG)
+
+### Affected by CORS error when switched to GitHub Codespaces
+
+![cruddr Loggedin POST ERROR message](assets/week3-cruddrLoggedinPOST-ERRORmessage.PNG)
+
+### Not working Workaround to disable X-Ray traces
+
+Just applied to docker-compose.yml
+
+```
+AWS_XRAY_SDK_ENABLED: "False"
+```
+
+but undo because it looks like affected by an issue similar to <https://github.com/aws/aws-xray-sdk-python/issues/330>
+
+### Configuration of AWS Cognito
+
+![cruddr cognito configuration](assets/week3-cognito.PNG)
+
+![cruddr cognito confirmation code](assets/week3-cognito-confirmationcode.PNG)
+![cruddr cognito  confirmation email](assets/week3-cognito-confirmemail.PNG)
+![cruddr cognito duplicated email](assets/week3-cognito-duplicatedmail.PNG)
+
+### Unsuccessful attempt to configure MFA
+
+![cruddr cognito MFA pinpoint](assets/week3-cognito-MFA-pinpoint.PNG)
+![cruddr cognito MFA pinpoint was Verified](assets/week3-cognito-MFA-pinpointVerified.PNG)
+![cruddr cognito MFA ](assets/week3-cognito-MFA.PNG)
+![cruddr cognito MFA 2](assets/week3-cognito-MFA2.PNG)
+![cruddr cognito MFA 3](assets/week3-cognito-MFA3.PNG)
+
+## Properly working gitpod Enviroment
+
+Added user aaa with current email to cognito Identity Provider through cruddr app:
+
+![cruddr Loggedin](assets/week3-cruddrLoggedin.PNG)
+
+A new message was written with the cognito authorized user, showing with developers tools in browser:
+![cruddr Loggedin POST message](assets/week3-cruddrLoggedinPOSTmessage.PNG)
+
+### CORS error when switched to GitHub Codespaces, fixed openning the port
+
+![cruddr Loggedin POST ERROR message](assets/week3-cruddrLoggedinPOST-ERRORmessage.PNG)
+
+### Applied Workaround to disable X-Ray traces, but not working
+
+Just applied to docker-compose.yml
+
+```
+AWS_XRAY_SDK_ENABLED: "False"
+```
+
+so undo because it looks like affected by an issue similar to <https://github.com/aws/aws-xray-sdk-python/issues/330>
+
+### Configured MFA in cognito
+
+#### Pinpoint service
+
+![cruddr cognito MFA pinpoint](assets/week3-cognito-MFA-pinpoint.PNG)
+![cruddr cognito MFA pinpoint was Verified](assets/week3-cognito-MFA-pinpointVerified.PNG)
+
+#### SMS configured MFA
+
+![cruddr cognito MFA ](assets/week3-cognito-MFA.PNG)
+![cruddr cognito MFA 2](assets/week3-cognito-MFA2.PNG)
+![cruddr cognito MFA 3](assets/week3-cognito-MFA3.PNG)
