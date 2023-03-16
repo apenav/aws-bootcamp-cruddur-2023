@@ -7,7 +7,7 @@ import DesktopSidebar     from '../components/DesktopSidebar';
 import ActivityFeed from '../components/ActivityFeed';
 import ActivityForm from '../components/ActivityForm';
 
-// [TODO] Authenication
+// [DONE] Authentication
 import Cookies from 'js-cookie'
 
 export default function UserFeedPage() {
@@ -38,7 +38,7 @@ export default function UserFeedPage() {
 
   const checkAuth = async () => {
     console.log('checkAuth')
-    // [TODO] Authenication
+    // [DONE] Authentication
     if (Cookies.get('user.logged_in')) {
       setUser({
         display_name: Cookies.get('user.name'),

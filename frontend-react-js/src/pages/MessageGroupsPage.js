@@ -4,7 +4,7 @@ import React from "react";
 import DesktopNavigation  from '../components/DesktopNavigation';
 import MessageGroupFeed from '../components/MessageGroupFeed';
 
-// [TODO] Authenication
+// [DONE] Authentication
 import Cookies from 'js-cookie'
 
 export default function MessageGroupsPage() {
@@ -32,7 +32,7 @@ export default function MessageGroupsPage() {
 
   const checkAuth = async () => {
     console.log('checkAuth')
-    // [TODO] Authenication
+    // [DONE] Authentication
     if (Cookies.get('user.logged_in')) {
       setUser({
         display_name: Cookies.get('user.name'),
