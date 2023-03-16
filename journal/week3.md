@@ -41,6 +41,7 @@ I added a commit as an independent branch (not to be merged) but also integrated
 
 Files commited under their respective folders, having a working app as a result.
 Docker compose up log:
+
 ```
 backend-flask                            | [2023-Mar-11 12:12] 192.168.40.10 GET http /api/activities/@andrewbrown? 200 OK
 backend-flask                            | 192.168.40.10 - - [11/Mar/2023 12:12:54] "GET /api/activities/@andrewbrown HTTP/1.1" 200 -
