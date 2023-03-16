@@ -32,33 +32,8 @@ I added a commit as an independent branch (not to be merged) but also integrated
 
 # Required Homework/Tasks
 
-Files commited under their respective folders.
+Files commited under their respective folders, having a working app as a result.
 
-## Properly working gitpod Enviroment
-
-Added user aaa with current email to cognito
-
-![cruddr Loggedin](assets/week3-cruddrLoggedin.PNG)
-![cruddr Loggedin POST message](assets/week3-cruddrLoggedinPOSTmessage.PNG)
-
-### Affected by CORS error when switched to GitHub Codespaces
-![cruddr Loggedin POST ERROR message](assets/week3-cruddrLoggedinPOST-ERRORmessage.PNG)
-
-### Not working Workaround to disable X-Ray traces
-Just applied to docker-compose.yml
-
-```
-AWS_XRAY_SDK_ENABLED: "False"
-```
-but undo because  it looks like affected by an issue similar to <https://github.com/aws/aws-xray-sdk-python/issues/330>
-
-[week2 variables shellscript file (to be set with real values)](https://raw.githubusercontent.com/apenav/aws-bootcamp-cruddur-2023/week-2/journal/assets/week2variables.sh)
-
-![cruddr cognito MFA pinpoint](assets/week3-cognito-MFA-pinpoint.PNG)
-![cruddr cognito MFA pinpoint was Verified](assets/week3-cognito-MFA-pinpointVerified.PNG)
-![cruddr cognito MFA ](assets/week3-cognito-MFA.PNG)
-![cruddr cognito MFA 2](assets/week3-cognito-MFA2.PNG)
-![cruddr cognito MFA 3](assets/week3-cognito-MFA3.PNG)
 
 ```
 backend-flask                            | [2023-Mar-11 12:12] 192.168.40.10 GET http /api/activities/@andrewbrown? 200 OK
@@ -147,3 +122,33 @@ backend-flask                            | [2023-Mar-11 12:19] 192.168.40.10 GET
 backend-flask                            | 192.168.40.10 - - [11/Mar/2023 12:19:30] "GET /api/activities/home HTTP/1.1" 200 -
 aws-bootcamp-cruddur-2023-xray-daemon-1  | 2023-03-11T12:19:31Z [Info] Successfully sent batch of 2 segments (0.100 seconds)
 ```
+
+## Properly working gitpod Enviroment
+
+Added user aaa with current email to cognito Identity Provider through cruddr app:
+
+![cruddr Loggedin](assets/week3-cruddrLoggedin.PNG)
+
+A new message was written with the cognito authorized user, showing with developers tools in browser:
+![cruddr Loggedin POST message](assets/week3-cruddrLoggedinPOSTmessage.PNG)
+
+### CORS error when switched to GitHub Codespaces, fixed openning the port
+![cruddr Loggedin POST ERROR message](assets/week3-cruddrLoggedinPOST-ERRORmessage.PNG)
+
+### Applied Workaround to disable X-Ray traces, but not working 
+Just applied to docker-compose.yml
+
+```
+AWS_XRAY_SDK_ENABLED: "False"
+```
+so undo because it looks like affected by an issue similar to <https://github.com/aws/aws-xray-sdk-python/issues/330>
+### Configured MFA in cognito 
+
+Pinpoint service:
+![cruddr cognito MFA pinpoint](assets/week3-cognito-MFA-pinpoint.PNG)
+![cruddr cognito MFA pinpoint was Verified](assets/week3-cognito-MFA-pinpointVerified.PNG)
+
+SMS configured MFA :
+![cruddr cognito MFA ](assets/week3-cognito-MFA.PNG)
+![cruddr cognito MFA 2](assets/week3-cognito-MFA2.PNG)
+![cruddr cognito MFA 3](assets/week3-cognito-MFA3.PNG)
