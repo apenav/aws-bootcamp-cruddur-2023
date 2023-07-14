@@ -7,7 +7,7 @@ import ActivityFeed from '../components/ActivityFeed';
 import ActivityForm from '../components/ActivityForm';
 import ReplyForm from '../components/ReplyForm';
 
-// [DONE] Authentication
+// [TODO] Authenication
 import Cookies from 'js-cookie'
 
 export default function NotificationsFeedPage() {
@@ -37,7 +37,7 @@ export default function NotificationsFeedPage() {
 
   const checkAuth = async () => {
     console.log('checkAuth')
-    // [DONE] Authentication
+    // [TODO] Authenication
     if (Cookies.get('user.logged_in')) {
       setUser({
         display_name: Cookies.get('user.name'),

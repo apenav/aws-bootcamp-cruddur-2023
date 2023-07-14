@@ -2,7 +2,7 @@ import './ProfileInfo.css';
 import {ReactComponent as ElipsesIcon} from './svg/elipses.svg';
 import React from "react";
 
-// [DONE] Authentication
+// [TODO] Authenication
 import { Auth } from 'aws-amplify';
 
 export default function ProfileInfo(props) {

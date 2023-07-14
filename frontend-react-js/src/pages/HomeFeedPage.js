@@ -9,9 +9,6 @@ import ActivityFeed from '../components/ActivityFeed';
 import ActivityForm from '../components/ActivityForm';
 import ReplyForm from '../components/ReplyForm';
 
-// [DONE] Authentication
-import Cookies from 'js-cookie'
-
 export default function HomeFeedPage() {
   const [activities, setActivities] = React.useState([]);
   const [popped, setPopped] = React.useState(false);
@@ -58,7 +55,7 @@ export default function HomeFeedPage() {
     })
     .catch((err) => console.log(err));
   };
-
+  
   React.useEffect(()=>{
     //prevents double call
     if (dataFetchedRef.current) return;
