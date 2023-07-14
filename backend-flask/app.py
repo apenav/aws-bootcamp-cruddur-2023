@@ -244,7 +244,8 @@ def data_notifications():
 @xray_recorder.capture('activities_users')
 def data_handle(handle):
   user_activities = UserActivities(request)
-  model = user_activities.run(handle, logger=LOGGER)
+  #model = user_activities.run(handle, logger=LOGGER)
+  model = user_activities.run(handle)
   LOGGER.info('Hello Cloudwatch! from  /api/activities/@<string:handle>')
   if model['errors'] is not None:
     return model['errors'], 422
