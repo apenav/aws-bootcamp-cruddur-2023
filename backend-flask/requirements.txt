@@ -13,7 +13,7 @@ watchtower
 
 blinker
 rollbar
-
+Flask==2.2
 Flask-AWSCognito
 
 psycopg[binary]
