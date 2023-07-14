@@ -227,12 +227,14 @@ def data_home():
     app.logger.debug("authenticated")
     app.logger.debug(claims)
     app.logger.debug(claims['username'])
-    data = HomeActivities.run(logger=LOGGER, cognito_user_id=claims['username'])
+    #data = HomeActivities.run(logger=LOGGER, cognito_user_id=claims['username'])
+    data = HomeActivities.run( cognito_user_id=claims['username'])
     LOGGER.info('Hello Cloudwatch! from  /api/activities/home')
   except TokenVerifyError as e:
     app.logger.debug(e)
     app.logger.debug("unauthenticated")
-    data = HomeActivities.run(logger=LOGGER, cognito_user_id=None)
+    #data = HomeActivities.run(logger=LOGGER, cognito_user_id=None)
+    data = HomeActivities.run( cognito_user_id=None)
   return data, 200
 
 @app.route("/api/activities/notifications", methods=['GET'])
