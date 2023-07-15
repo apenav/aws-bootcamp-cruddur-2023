@@ -245,7 +245,7 @@ def data_notifications():
 @app.route("/api/activities/@<string:handle>", methods=['GET'])
 @xray_recorder.capture('activities_users')
 def data_handle(handle):
-  user_activities = UserActivities(request)
+  user_activities = UserActivities()
   #model = user_activities.run(handle, logger=LOGGER)
   model = user_activities.run(handle)
   LOGGER.info('Hello Cloudwatch! from  /api/activities/@<string:handle>')
